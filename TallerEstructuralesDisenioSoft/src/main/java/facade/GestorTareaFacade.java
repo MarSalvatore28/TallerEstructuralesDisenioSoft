@@ -6,6 +6,14 @@ package facade;
 import java.util.ArrayList;
 import java.util.List;
 
+import FactoryMethod.Tarea;
+import FactoryMethod.TareaComplejaFactory;
+import FactoryMethod.TareaFactory;
+import FactoryMethod.TareaSimpleFactory;
+import observer.CentroNotificaciones;
+import observer.Notificador;
+import strategy.EstrategiaVisualizacion;
+
 /**
  *
  * @author DHAMAR
@@ -36,7 +44,7 @@ public class GestorTareaFacade {
         listaTareas.add(tarea);
 
         // Notificar creación de la tarea
-        notificador.notificar("Tarea creada: " + tarea.descripcion);
+        notificador.notificar("Tarea creada: " + tarea.getDescripcion());
     }
 
     // Listar todas las tareas actuales
@@ -47,7 +55,7 @@ public class GestorTareaFacade {
     // Eliminar una tarea del sistema
     public void eliminarTarea(Tarea tarea) {
         listaTareas.remove(tarea);
-        notificador.notificar("Tarea eliminada: " + tarea.descripcion);
+        notificador.notificar("Tarea eliminada: " + tarea.getDescripcion());
     }
 
     // Establecer una estrategia de visualización
@@ -72,5 +80,5 @@ public class GestorTareaFacade {
     // Eliminar un observador del sistema de notificaciones
     public void eliminarSuscriptor(CentroNotificaciones suscriptor) {
         notificador.eliminarSuscriptor(suscriptor);
-    }
+    }
 }

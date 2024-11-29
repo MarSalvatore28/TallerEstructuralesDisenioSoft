@@ -14,8 +14,10 @@ public abstract class Tarea {
         this.fechaCreacion = java.time.LocalDateTime.now();
         this.fechaVencimiento = fechaVencimiento;
     }
-
+    
     public abstract void crear(); 
 
-
+    public String getDescripcion(){
+        return this.descripcion;
+    }
 }
